@@ -28,15 +28,19 @@ class TwoSum{
     //Time complexity: O(n)
     public static int[] twoSumOptimized(int[] nums,int target){
         int n = nums.length;
-        if(n < 2) return new int[]{-1, -1}; // Return -1, -1 if not enough elements
-        Map<Integer,Integer> map = new HashMap<>();
-        for(int i = 0;i<n;i++){
+        if (n < 2) return new int[]{-1, -1}; // Not enough elements
+
+        Map<Integer, Integer> map = new HashMap<>();
+
+        for (int i = 0; i < n; i++) {
             int remaining = target - nums[i];
-            if(map.containsKey(map.get(remaining))){
-                return new int[]{map.get(remaining), i};
+            if (map.containsKey(remaining)) {
+                return new int[]{map.get(remaining), i}; // Found the pair
             }
+            map.put(nums[i], i); // Store value and index
         }
-        return new int[]{-1, -1}; // Return -1, -1 if no solution found
+
+        return new int[]{-1, -1}; // No pair found
     }
 
     public static void main(String[] args) {
