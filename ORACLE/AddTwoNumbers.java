@@ -56,3 +56,21 @@ public class AddTwoNumbers {
         ListNode(int val, ListNode next) { this.val = val; this.next = next; }
     }
 }
+/**
+     * Brute Force Pseudo-code:
+     * ------------------------
+     * 1. Convert both linked lists to their corresponding integer values (reversed).
+     *    For example, 2 -> 4 -> 3 becomes 342.
+     * 2. Add the two integers.
+     * 3. Convert the result back to a linked list in reverse order.
+     *    For example, 807 becomes 7 -> 0 -> 8.
+     *
+     * Time Complexity (Brute Force):
+     * - O(n + m) to traverse both lists and build the integers.
+     * - O(1) addition (but integers can be large).
+     * - O(log(sum)) to convert the result into a list.
+     * Overall: O(n + m + log(sum)).
+     * Space Complexity (Brute Force):
+     * - O(n + m) for storing the integers.
+     */
+    
